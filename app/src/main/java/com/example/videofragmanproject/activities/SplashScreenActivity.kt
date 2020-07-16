@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.videofragmanproject.databinding.ActivitySplashScreenBinding
 
 
-class SplashScreen : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
 
     lateinit var binding:  ActivitySplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {

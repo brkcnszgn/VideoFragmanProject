@@ -1,7 +1,7 @@
 package com.example.videofragmanproject.mock
 
 import androidx.fragment.app.Fragment
-import com.example.videofragmanproject.fragment.MovieFragment
+import com.example.videofragmanproject.activities.fragment.MovieFragment
 import com.example.videofragmanproject.model.DetailFragmanModel
 import com.example.videofragmanproject.model.FragmanModel
 

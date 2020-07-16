@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.videofragmanproject.R
-import com.example.videofragmanproject.activities.FragmanDetail
+import com.example.videofragmanproject.activities.FragmanDetailActivity
 import com.example.videofragmanproject.adapter.FragmanAdapter
 import com.example.videofragmanproject.mock.MockData
 import com.google.android.exoplayer2.ExoPlayerFactory
@@ -42,7 +42,7 @@ class MovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         videoOynat()
         recycle_frg.adapter = FragmanAdapter(MockData.getFragmanList()) {
-            startActivity(Intent(view.context, FragmanDetail::class.java))
+            startActivity(Intent(view.context, FragmanDetailActivity::class.java))
         }
 
 
