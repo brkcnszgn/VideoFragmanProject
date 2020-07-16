@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewPagerMovie.adapter =MovieAdapter(supportFragmentManager,MockData.getMoviesFragment(5))
+        tabLayout.setupWithViewPager(viewPagerMovie)
     }
 
 
