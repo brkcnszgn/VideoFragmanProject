@@ -1,4 +1,4 @@
-package com.example.videofragmanproject.fragment
+package com.example.videofragmanproject.activities.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

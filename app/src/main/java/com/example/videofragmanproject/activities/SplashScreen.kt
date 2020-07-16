@@ -1,4 +1,4 @@
-package com.example.videofragmanproject
+package com.example.videofragmanproject.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +18,8 @@ class SplashScreen : AppCompatActivity() {
            binding.movies.animate().setDuration(700).translationY(100f).alpha(1f).withEndAction{
            binding.movies.animate().rotation(620f).duration = 700
            binding.tvfrg.animate().setDuration(500).translationY(0f).alpha(1f).withEndAction{
-               startActivity(Intent(this,MainActivity::class.java))}
+               startActivity(Intent(this,
+                   MainActivity::class.java))}
         //    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
     }
