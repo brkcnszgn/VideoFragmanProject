@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         viewPagerMovie.adapter =MovieAdapter(supportFragmentManager,MockData.getMoviesFragment(5))
         tabLayout.setupWithViewPager(viewPagerMovie)
+        tabLayout.setSelectedTabIndicatorColor(resources.getColor(R.color.white))
     }
 
 
