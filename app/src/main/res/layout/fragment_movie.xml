@@ -12,6 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:resize_mode="fill"
+        app:auto_show="true"
+        app:hide_on_touch="true"
+        app:repeat_toggle_modes="one"
         app:show_shuffle_button="false" />
 
     <LinearLayout
@@ -66,7 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginStart="10dp"
         android:layout_marginBottom="25dp">
 
         <androidx.recyclerview.widget.RecyclerView
