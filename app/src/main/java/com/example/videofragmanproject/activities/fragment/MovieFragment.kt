@@ -73,7 +73,8 @@ class MovieFragment : Fragment() {
         player_view.player = simpleExoPlayer
 
         // player ekranına focuslanma ozelligi
-        player_view.requestFocus()
+        // player_view.requestFocus()
+        player_view.useController = false
     }
 
 }
