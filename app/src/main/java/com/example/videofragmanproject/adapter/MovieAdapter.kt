@@ -8,8 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 class MovieAdapter (
     fragmentManager: FragmentManager,
     val newsFragmentList: List<Fragment>
-) :
-    FragmentStatePagerAdapter(
+) : FragmentStatePagerAdapter(
         fragmentManager,
         BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
     ) {
