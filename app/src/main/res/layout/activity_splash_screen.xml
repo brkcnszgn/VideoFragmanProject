@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorOrange"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".SplashScreen">
+
+    <TextView
+
+        android:translationY="-350dp"
+        android:gravity="center"
+        android:id="@+id/tvfrg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="75sp"
+        android:text="Fragman" />
+
+
+    <ImageView
+        android:translationY="250dp"
+        android:id="@+id/movies"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/video"
+    />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_marginTop="130dp"
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
