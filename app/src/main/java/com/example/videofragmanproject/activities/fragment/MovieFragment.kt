@@ -1,6 +1,8 @@
 package com.example.videofragmanproject.activities.fragment
 
+import android.content.Context
 import android.content.Intent
+import android.media.AudioManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +13,7 @@ import com.example.videofragmanproject.R
 import com.example.videofragmanproject.activities.FragmanDetailActivity
 import com.example.videofragmanproject.adapter.FragmanAdapter
 import com.example.videofragmanproject.mock.MockData
+import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
@@ -75,6 +78,12 @@ class MovieFragment : Fragment() {
         // player ekranına focuslanma ozelligi
         // player_view.requestFocus()
         player_view.useController = false
+        player_view.isSoundEffectsEnabled = false
+        player_view.player.audioComponent!!.volume = 0f
     }
+
+
+
+
 
 }

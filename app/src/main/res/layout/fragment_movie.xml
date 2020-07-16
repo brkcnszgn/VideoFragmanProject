@@ -13,9 +13,9 @@
         android:layout_height="match_parent"
         app:resize_mode="fill"
         app:auto_show="true"
-        app:hide_on_touch="true"
-        app:repeat_toggle_modes="one"
-        app:show_shuffle_button="false" />
+        android:soundEffectsEnabled="false"
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"

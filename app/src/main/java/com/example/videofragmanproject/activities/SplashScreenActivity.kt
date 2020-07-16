@@ -24,6 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
                        MainActivity::class.java
                    )
                )
+               finish()
            }
         //    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
