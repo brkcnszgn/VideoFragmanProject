@@ -16,8 +16,11 @@ class FragmanHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     val imageView: ImageView = itemView.findViewById(R.id.img_fragman)
     val title: TextView = itemView.findViewById(R.id.tv_title)
 
-    fun bind(fragmanmodel: FragmanModel) {
+    fun bind(fragmanmodel: FragmanModel, onItemClickListener: (FragmanModel) -> Unit) {
         Glide.with(itemView.context).load(fragmanmodel.fragmanPhoto).into(imageView)
         title.text = fragmanmodel.title
+        itemView.setOnClickListener {
+            onItemClickListener(fragmanmodel)
+        }
     }
 }

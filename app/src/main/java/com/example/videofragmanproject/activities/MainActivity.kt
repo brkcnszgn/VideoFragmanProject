@@ -1,7 +1,8 @@
-package com.example.videofragmanproject
+package com.example.videofragmanproject.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.videofragmanproject.R
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.mock.MockData
 import kotlinx.android.synthetic.main.activity_main.*
