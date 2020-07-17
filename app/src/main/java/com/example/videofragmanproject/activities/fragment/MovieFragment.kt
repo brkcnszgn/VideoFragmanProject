@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.videofragmanproject.R
-import com.example.videofragmanproject.activities.FragmanDetailActivity
 import com.example.videofragmanproject.adapter.FragmanAdapter
 import com.example.videofragmanproject.mock.MockData
 import com.google.android.exoplayer2.ExoPlayer
@@ -43,15 +42,17 @@ class MovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        videoOynat()
+        videoOynat(URL)
         recycle_frg.adapter = FragmanAdapter(MockData.getFragmanList()) {
-            startActivity(Intent(view.context, FragmanDetailActivity::class.java))
+
+            //startActivity(Intent(view.context, FragmanDetailActivity::class.java))
+            videoOynat(it.videoUrl)
         }
 
 
     }
 
-    fun videoOynat() {
+    open fun videoOynat(url: String) {
         // yeni bir instance baslatılması
         simpleExoPlayer = ExoPlayerFactory.newSimpleInstance(view?.context)
 
@@ -64,7 +65,7 @@ class MovieFragment : Fragment() {
 
         // media source nesnesine kullanılacak video türüne göre tanımlama ve url koyma islemi
         val mediaSource =
-            ProgressiveMediaSource.Factory(mediaDataSourceFactory).createMediaSource(Uri.parse(URL))
+            ProgressiveMediaSource.Factory(mediaDataSourceFactory).createMediaSource(Uri.parse(url))
 
         // player'ı hazır hale getirme
         simpleExoPlayer.prepare(mediaSource, false, false)
@@ -78,12 +79,8 @@ class MovieFragment : Fragment() {
         // player ekranına focuslanma ozelligi
         // player_view.requestFocus()
         player_view.useController = false
-        player_view.isSoundEffectsEnabled = false
-        player_view.player.audioComponent!!.volume = 0f
+       /* player_view.isSoundEffectsEnabled = false
+        player_view.player.audioComponent!!.volume = 0f*/
     }
-
-
-
-
 
 }
