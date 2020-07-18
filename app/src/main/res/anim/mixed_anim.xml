@@ -14,7 +14,6 @@
         android:toXScale="4"
         android:toYScale="4" >
     </scale>
-
     <!-- Rotate 180 degrees -->
     <rotate
         android:duration="500"
@@ -24,5 +23,6 @@
         android:repeatCount="infinite"
         android:repeatMode="restart"
         android:toDegrees="360" />
+
 
 </set>
