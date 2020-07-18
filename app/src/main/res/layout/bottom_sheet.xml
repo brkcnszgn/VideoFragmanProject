@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="4dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -15,17 +14,18 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp">
 
+        <Button
+            android:id="@+id/btn_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/custom_button"
+            android:text="GET DETAIL" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_sheet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:text="GET DETAIL" />
 
             <ImageView
                 android:id="@+id/imageBottomSheet"
