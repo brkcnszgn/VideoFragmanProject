@@ -7,6 +7,7 @@ import com.example.videofragmanproject.R
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.databinding.ActivityMainBinding
 import com.example.videofragmanproject.mock.MockData
+import com.example.videofragmanproject.model.FragmanModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.bottom_sheet
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.bottom_sheet.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    lateinit var bottomSheetBehavior: BottomSheetBehavior<*>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +31,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun clickFunction(buttonSheetBehavior: BottomSheetBehavior<*>) {
+    fun clickFunction() {
         layoutSheet.setOnClickListener {
-            when (buttonSheetBehavior.state) {
-                BottomSheetBehavior.STATE_COLLAPSED -> buttonSheetBehavior.setState(
+            when (bottomSheetBehavior.state) {
+                BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
                     BottomSheetBehavior.STATE_EXPANDED
                 )
-                BottomSheetBehavior.STATE_EXPANDED -> buttonSheetBehavior.setState(
+                BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
                     BottomSheetBehavior.STATE_COLLAPSED
                 )
             }
@@ -43,9 +45,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setBottomSheet() {
-        val bottomSheetBehavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(bottom_sheet)
-        clickFunction(bottomSheetBehavior)
+    fun setBottomSheet() {
+        bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet)
+        clickFunction()
         //bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         //bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
@@ -69,6 +71,20 @@ class MainActivity : AppCompatActivity() {
                 println("slide ----->>>>>>>>>>>>> ")
             }
         })
+    }
+
+    open fun clickFragmentDetail(fragmentModel: FragmanModel) {
+        when (bottomSheetBehavior.state) {
+            BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
+                BottomSheetBehavior.STATE_EXPANDED
+            )
+            BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
+                BottomSheetBehavior.STATE_COLLAPSED
+            )
+        }
+
+        if (bottomSheetBehavior.state == 3)
+            binding.includeLayout.movieName.text = fragmentModel.title
     }
 
 

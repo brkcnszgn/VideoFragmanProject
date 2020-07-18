@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import androidx.fragment.app.Fragment
-import com.example.videofragmanproject.R
+import com.example.videofragmanproject.activities.MainActivity
 import com.example.videofragmanproject.adapter.FragmanAdapter
 import com.example.videofragmanproject.databinding.FragmentMovieBinding
 import com.example.videofragmanproject.mock.MockData
@@ -16,6 +18,8 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MovieFragment : Fragment() {
@@ -23,6 +27,8 @@ class MovieFragment : Fragment() {
     private lateinit var binding: FragmentMovieBinding
     private lateinit var simpleExoPlayer: SimpleExoPlayer
     private lateinit var mediaDataSourceFactory: DataSource.Factory
+    lateinit var buttonSheetBehavior: BottomSheetBehavior<*>
+
     val URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
 
 
@@ -40,10 +46,16 @@ class MovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         videoOynat(URL)
-        binding.moviesname.animate().apply {
-            duration = 1000
-            rotationYBy(3600f)
-        }.start()
+        binding.txtMovieName.animate().alpha(1f).setDuration(1000)
+            .setInterpolator(DecelerateInterpolator())
+            .withEndAction(Runnable {
+                binding.txtMovieName.animate().alpha(0f).setDuration(7000)
+                    .setInterpolator(AccelerateInterpolator()).start()
+            }).start()
+//        binding.txtMovieName.animate().apply {
+//            duration = 1000
+//            rotationYBy(3600f)
+//        }.start()
 
 /*        object : CountDownTimer(10000, 1000) {
             override fun onFinish() {
@@ -55,8 +67,10 @@ class MovieFragment : Fragment() {
             }
 
         }.start()*/
-        binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) {
-            videoOynat(it.videoUrl)
+        binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
+            //  videoOynat(it.videoUrl)
+
+            (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
         }
 
     }
@@ -82,6 +96,7 @@ class MovieFragment : Fragment() {
 
         // play oynatılmaya hazır olduğunda video oynatma islemi
         simpleExoPlayer.playWhenReady = true
+
 
         // loyout dosyasındaki id degeri eslestirme
         binding.playerView.player = simpleExoPlayer
