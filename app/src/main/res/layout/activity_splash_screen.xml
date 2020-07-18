@@ -29,8 +29,9 @@
         />-->
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
         android:scaleType="centerInside"
         android:src="@drawable/splash" />
 

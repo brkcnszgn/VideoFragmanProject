@@ -8,7 +8,7 @@ import com.example.videofragmanproject.databinding.ActivitySplashScreenBinding
 
 
 class SplashScreenActivity : AppCompatActivity() {
-    private val SPLASH_DISPLAY_LENGTH = 4700
+    private val SPLASH_DISPLAY_LENGTH = 6000
 
     lateinit var binding:  ActivitySplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
