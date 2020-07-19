@@ -19,7 +19,6 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MovieFragment : Fragment() {
@@ -52,21 +51,6 @@ class MovieFragment : Fragment() {
                 binding.txtMovieName.animate().alpha(0f).setDuration(7000)
                     .setInterpolator(AccelerateInterpolator()).start()
             }).start()
-//        binding.txtMovieName.animate().apply {
-//            duration = 1000
-//            rotationYBy(3600f)
-//        }.start()
-
-/*        object : CountDownTimer(10000, 1000) {
-            override fun onFinish() {
-                binding.moviesname.visibility = View.GONE
-            }
-
-            override fun onTick(millisUntilFinished: Long) {
-                binding.moviesname.text.toString()
-            }
-
-        }.start()*/
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             //  videoOynat(it.videoUrl)
 
@@ -106,7 +90,6 @@ class MovieFragment : Fragment() {
         binding.playerView.useController = false
 
     }
-
 
 
 }
