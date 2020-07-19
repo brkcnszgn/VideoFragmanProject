@@ -32,16 +32,17 @@ class MainActivity : AppCompatActivity() {
 
 
     fun clickFunction() {
-        layoutSheet.setOnClickListener {
-            when (bottomSheetBehavior.state) {
-                BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
-                    BottomSheetBehavior.STATE_EXPANDED
-                )
-                BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
-                    BottomSheetBehavior.STATE_COLLAPSED
-                )
+        binding.includeLayout.clickableBottomShet
+            .setOnClickListener {
+                when (bottomSheetBehavior.state) {
+                    BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
+                        BottomSheetBehavior.STATE_EXPANDED
+                    )
+                    BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
+                        BottomSheetBehavior.STATE_COLLAPSED
+                    )
+                }
             }
-        }
 
     }
 
