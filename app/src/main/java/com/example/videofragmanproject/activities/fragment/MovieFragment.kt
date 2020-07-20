@@ -2,6 +2,7 @@ package com.example.videofragmanproject.activities.fragment
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,7 @@ class MovieFragment : Fragment() {
     private lateinit var mediaDataSourceFactory: DataSource.Factory
     lateinit var buttonSheetBehavior: BottomSheetBehavior<*>
 
-    val URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+    val URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 
 
     override fun onCreateView(
@@ -43,20 +44,18 @@ class MovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         videoOynat(URL)
         binding.txtMovieName.animate().alpha(1f).setDuration(1000)
             .setInterpolator(DecelerateInterpolator())
             .withEndAction(Runnable {
-                binding.txtMovieName.animate().alpha(0f).setDuration(7000)
+                binding.txtMovieName.animate().alpha(0f).setDuration(8000)
                     .setInterpolator(AccelerateInterpolator()).start()
             }).start()
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             //  videoOynat(it.videoUrl)
-
+            binding.playerView.player.stop()
             (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
         }
-
     }
 
 
@@ -89,6 +88,41 @@ class MovieFragment : Fragment() {
         // player_view.requestFocus()
         binding.playerView.useController = false
 
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Log.e("TAG", "onActivity tetiklendi")
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.e("TAG", "onCreate tetiklendi")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("TAG", "onResume tetiklendi")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("TAG", "onResume tetiklendi")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("TAG", "onDestroy tetiklendi")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("TAG", "onDestroy tetiklendi")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.e("TAG", "onDetach tetiklendi")
     }
 
 

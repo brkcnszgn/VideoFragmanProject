@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.videofragmanproject.R
+import com.example.videofragmanproject.activities.fragment.MovieFragment
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.databinding.ActivityMainBinding
 import com.example.videofragmanproject.mock.MockData
@@ -79,9 +80,10 @@ class MainActivity : AppCompatActivity() {
             BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
                 BottomSheetBehavior.STATE_EXPANDED
             )
-            BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
-                BottomSheetBehavior.STATE_COLLAPSED
-            )
+            BottomSheetBehavior.STATE_EXPANDED -> {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                (binding.root.context as MovieFragment).videoOynat("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+            }
         }
 
         if (bottomSheetBehavior.state == 3)
