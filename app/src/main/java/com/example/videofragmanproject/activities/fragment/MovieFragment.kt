@@ -2,6 +2,7 @@ package com.example.videofragmanproject.activities.fragment
 
 import android.net.Uri
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -44,20 +45,36 @@ class MovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        videoOynat(URL)
+
         binding.txtMovieName.animate().alpha(1f).setDuration(1000)
             .setInterpolator(DecelerateInterpolator())
             .withEndAction(Runnable {
                 binding.txtMovieName.animate().alpha(0f).setDuration(8000)
                     .setInterpolator(AccelerateInterpolator()).start()
             }).start()
+
+
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
-            //  videoOynat(it.videoUrl)
             binding.playerView.player.stop()
             (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
         }
-    }
 
+            .also {
+                object : CountDownTimer(1000, 1000) {
+                    override fun onFinish() {
+                        binding.recycleFrg.startLayoutAnimation()
+
+                    }
+
+                    override fun onTick(millisUntilFinished: Long) {
+                    }
+
+                }.start()
+
+            }
+        simpleExoPlayer = ExoPlayerFactory.newSimpleInstance(view.context)
+
+    }
 
     open fun videoOynat(url: String) {
         // yeni bir instance baslatılması
@@ -100,29 +117,20 @@ class MovieFragment : Fragment() {
         Log.e("TAG", "onCreate tetiklendi")
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.e("TAG", "onResume tetiklendi")
+    override fun onResume() {
+        super.onResume()
+        videoOynat(URL)
     }
+
 
     override fun onStop() {
         super.onStop()
-        Log.e("TAG", "onResume tetiklendi")
+        simpleExoPlayer.playWhenReady = false
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.e("TAG", "onDestroy tetiklendi")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.e("TAG", "onDestroy tetiklendi")
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        Log.e("TAG", "onDetach tetiklendi")
+    override fun onPause() {
+        super.onPause()
+        simpleExoPlayer.playWhenReady = false
     }
 
 

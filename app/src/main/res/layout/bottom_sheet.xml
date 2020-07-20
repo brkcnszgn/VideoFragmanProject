@@ -62,7 +62,7 @@
 
 
                 <com.google.android.exoplayer2.ui.PlayerView
-                    android:id="@+id/player_view"
+                    android:id="@+id/detail_video"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     app:auto_show="true"

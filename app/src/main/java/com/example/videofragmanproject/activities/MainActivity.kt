@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.videofragmanproject.R
-import com.example.videofragmanproject.activities.fragment.MovieFragment
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.databinding.ActivityMainBinding
 import com.example.videofragmanproject.mock.MockData
@@ -23,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.viewPagerMovie.adapter =
             MovieAdapter(supportFragmentManager, MockData.getMoviesFragment(5))
         binding.tabLayout.setupWithViewPager(viewPagerMovie)
@@ -82,7 +80,6 @@ class MainActivity : AppCompatActivity() {
             )
             BottomSheetBehavior.STATE_EXPANDED -> {
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-                (binding.root.context as MovieFragment).videoOynat("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
             }
         }
 
