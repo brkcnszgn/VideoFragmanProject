@@ -47,6 +47,8 @@ class MovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         txtAnim()
+/*        favIcon()
+        favIconReverse()*/
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             binding.playerView.player.stop()
             (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
@@ -69,7 +71,7 @@ class MovieFragment : Fragment() {
 
     }
 
-    open fun txtAnim() {
+    fun txtAnim() {
         binding.txtMovieName.animate().alpha(1f).setDuration(500)
             .setInterpolator(DecelerateInterpolator())
             .withEndAction(Runnable {
@@ -77,6 +79,20 @@ class MovieFragment : Fragment() {
                     .setInterpolator(AccelerateInterpolator()).start()
             }).start()
     }
+
+/*    fun favIcon(){
+        binding.emptyHeart.setOnClickListener{
+            binding.emptyHeart.visibility = View.GONE
+            binding.heart.visibility = View.VISIBLE
+        }
+    }
+    fun favIconReverse(){
+        binding.heart.setOnClickListener{
+            binding.emptyHeart.visibility = View.VISIBLE
+            binding.heart.visibility = View.GONE
+        }
+    }*/
+
 
     open fun videoOynat(url: String) {
         // yeni bir instance baslatılması

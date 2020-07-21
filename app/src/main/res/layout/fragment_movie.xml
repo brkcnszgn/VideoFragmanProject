@@ -45,35 +45,15 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp">
+            android:layout_gravity="end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="10dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <Button
-                    android:id="@+id/btn_apple"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:background="@drawable/custom_button"
-                    android:drawableStart="@drawable/lose"
-                    android:text="%10" />
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/custom_button"
-                    android:drawableStart="@drawable/win"
-                    android:text="%90" />
-            </LinearLayout>
-        </FrameLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -82,8 +62,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_frg"
                 android:layout_width="wrap_content"
-                android:layoutAnimation="@anim/item_layout_animation"
                 android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/item_layout_animation"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
