@@ -46,14 +46,7 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.txtMovieName.animate().alpha(1f).setDuration(1000)
-            .setInterpolator(DecelerateInterpolator())
-            .withEndAction(Runnable {
-                binding.txtMovieName.animate().alpha(0f).setDuration(8000)
-                    .setInterpolator(AccelerateInterpolator()).start()
-            }).start()
-
-
+        txtAnim()
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             binding.playerView.player.stop()
             (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
@@ -74,6 +67,15 @@ class MovieFragment : Fragment() {
             }
         simpleExoPlayer = ExoPlayerFactory.newSimpleInstance(view.context)
 
+    }
+
+    open fun txtAnim() {
+        binding.txtMovieName.animate().alpha(1f).setDuration(500)
+            .setInterpolator(DecelerateInterpolator())
+            .withEndAction(Runnable {
+                binding.txtMovieName.animate().alpha(0f).setDuration(15000)
+                    .setInterpolator(AccelerateInterpolator()).start()
+            }).start()
     }
 
     open fun videoOynat(url: String) {
@@ -119,18 +121,23 @@ class MovieFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        txtAnim()
         videoOynat(URL)
+
     }
 
 
     override fun onStop() {
         super.onStop()
+        txtAnim()
         simpleExoPlayer.playWhenReady = false
     }
 
     override fun onPause() {
         super.onPause()
+        txtAnim()
         simpleExoPlayer.playWhenReady = false
+
     }
 
 
