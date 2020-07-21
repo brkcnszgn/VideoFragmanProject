@@ -34,9 +34,11 @@ class MainActivity : AppCompatActivity() {
         binding.includeLayout.clickableBottomShet
             .setOnClickListener {
                 when (bottomSheetBehavior.state) {
-                    BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
-                        BottomSheetBehavior.STATE_EXPANDED
-                    )
+                    BottomSheetBehavior.STATE_COLLAPSED -> {
+                        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+
+                        binding.includeLayout.detailVideo.startLayoutAnimation()
+                    }
                     BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
                         BottomSheetBehavior.STATE_COLLAPSED
                     )
@@ -85,6 +87,7 @@ class MainActivity : AppCompatActivity() {
 
         if (bottomSheetBehavior.state == 3)
             binding.includeLayout.movieName.text = fragmentModel.title
+        detail_video
     }
 
 

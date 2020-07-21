@@ -126,7 +126,6 @@ class MovieFragment : Fragment() {
 
     }
 
-
     override fun onStop() {
         super.onStop()
         txtAnim()
