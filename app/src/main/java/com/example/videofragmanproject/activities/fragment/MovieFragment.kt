@@ -1,5 +1,6 @@
 package com.example.videofragmanproject.activities.fragment
 
+import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -120,6 +121,7 @@ class MovieFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        Log.e("TAG", "onResume tetiklendi")
         txtAnim()
         videoOynat(URL)
 
@@ -127,15 +129,27 @@ class MovieFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
+        Log.e("TAG", "onStop tetiklendi")
         txtAnim()
         simpleExoPlayer.playWhenReady = false
     }
 
     override fun onPause() {
         super.onPause()
+        Log.e("TAG", "onpause tetiklendi")
         txtAnim()
         simpleExoPlayer.playWhenReady = false
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("TAG", "desteroy tetiklendi")
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.e("TAG", "attach tetiklendi")
     }
 
 

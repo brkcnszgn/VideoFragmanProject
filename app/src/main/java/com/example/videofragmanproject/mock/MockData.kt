@@ -2,6 +2,7 @@ package com.example.videofragmanproject.mock
 
 import androidx.fragment.app.Fragment
 import com.example.videofragmanproject.activities.fragment.MovieFragment
+import com.example.videofragmanproject.model.ActorModel
 import com.example.videofragmanproject.model.FragmanModel
 
 
@@ -59,6 +60,43 @@ object MockData {
 
 
         return fragmanList
+    }
+
+    fun getActorList(): List<ActorModel> {
+        val actorList: ArrayList<ActorModel> = ArrayList()
+        val actor1 = ActorModel(
+            "https://upload.wikimedia.org/wikipedia/commons/f/f7/Anne-Marie_Rose_Nicholson%2C_2017_%28cropped%29.jpg",
+            "Annie Marie"
+        )
+        val actor2 = ActorModel(
+            "https://cdn1.ntv.com.tr/gorsel/LyhBBz-5RkS1H4ElriqwUA.jpg?width=952&height=540&mode=both&scale=both",
+            "Jonny Deep"
+        )
+        val actor3 = ActorModel(
+            "https://i4.hurimg.com/i/hurriyet/75/750x422/55ea83d6f018fbb8f884ffcb.jpg",
+            "Tolga Cevik"
+        )
+        val actor4 = ActorModel(
+            "https://www.log.com.tr/wp-content/uploads/2018/10/Cem-Y%C4%B1lmaz-222-1280x720.jpg",
+            "Cem Yilmaz "
+        )
+        val actor5 = ActorModel(
+            "https://ia.tmgrup.com.tr/4fbf84/0/0/0/0/644/515?u=http://i.tmgrup.com.tr/cr/2018/10/20/rihanna-super-bowlu-reddetti-1540029705147.jpg",
+            "Rihanna"
+        )
+        val actor6 = ActorModel(
+            "https://i2.cnnturk.com/i/cnnturk/75/630x0/5dc8f6ff214ed81730ed236d.jpg",
+            "Nusret"
+        )
+
+        actorList.add(actor1)
+        actorList.add(actor2)
+        actorList.add(actor3)
+        actorList.add(actor4)
+        actorList.add(actor5)
+        actorList.add(actor6)
+
+        return actorList
     }
 
 }

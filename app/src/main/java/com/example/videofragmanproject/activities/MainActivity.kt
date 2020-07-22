@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.videofragmanproject.R
+import com.example.videofragmanproject.adapter.ActorAdapter
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.databinding.ActivityMainBinding
 import com.example.videofragmanproject.mock.MockData
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.tabLayout.setupWithViewPager(viewPagerMovie)
         binding.tabLayout.setSelectedTabIndicatorColor(resources.getColor(R.color.white))
         setBottomSheet()
+        binding.includeLayout.recycleActor.adapter = ActorAdapter(MockData.getActorList())
 
     }
 

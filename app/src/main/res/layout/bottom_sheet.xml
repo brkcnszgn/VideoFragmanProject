@@ -57,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:background="@color/black"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -71,224 +72,272 @@
                     app:resize_mode="fill"
                     app:show_shuffle_button="false" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:background="@color/ColorGray"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/movie_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Toy Story 4"
-                        android:textColor="@android:color/white"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
-
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-
-                        <RatingBar
-                            android:id="@+id/ratingBar"
-                            android:layout_width="240dp"
-                            android:layout_height="40dp"
-                            android:background="@color/white"
-                            android:numStars="5" />
-
-                        <Button
-                            android:id="@+id/gonderButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/custom_button"
-                            android:text="Gonder" />
-
-
-                    </LinearLayout>
+                    app:cardCornerRadius="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
+                        android:background="@color/ColorGray"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="70dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/custom_button"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="10:30" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/custom_button"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="13:00" />
+                            <TextView
+                                android:id="@+id/movie_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Toy Story 4"
+                                android:textColor="@android:color/white"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/custom_button"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="17:30" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="60dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/custom_button"
+                                android:padding="8dp"
+                                android:text="Romantik,Komedi" />
 
-                        <TextView
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:background="@drawable/custom_button"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="19:00" />
-
-                    </LinearLayout>
+                        </LinearLayout>
 
 
-                    <!--                    <TextView
-                                            android:id="@+id/mvoie_species"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:textColor="@android:color/white"
-                                            android:layout_gravity="center"
-                                            android:layout_marginTop="1dp"
-                                            android:text="Kısa Acıklama"
-                                            android:textSize="20sp" />-->
-
-                    <!--                        <LinearLayout
-                                                android:layout_width="wrap_content"
+                        <!--                    <LinearLayout
+                                                android:id="@+id/linearLayout1"
+                                                android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:layout_margin="20dp"
-                                                android:gravity="center_vertical"
+                                                android:layout_marginTop="8dp"
                                                 android:orientation="horizontal">
 
-                                                <ImageView
-                                                    android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:src="@drawable/clock" />
+                                                <RatingBar
+                                                    android:id="@+id/ratingBar"
+                                                    android:layout_width="240dp"
+                                                    android:layout_height="40dp"
+                                                    android:background="@color/white"
+                                                    android:numStars="5" />
 
-                                                <TextView
-                                                    android:id="@+id/movie_actor"
+                                                <Button
+                                                    android:id="@+id/gonderButton"
                                                     android:layout_width="wrap_content"
-                                                    android:textColor="@android:color/white"
-                                                    android:layout_height="wrap_content"
+                                                    android:layout_height="30dp"
                                                     android:layout_marginStart="8dp"
-                                                    android:text="02:18:17"
-                                                    android:textSize="16sp"
-                                                    android:textStyle="bold" />
+                                                    android:background="@drawable/custom_button"
+                                                    android:text="Gonder" />
 
-                                                <LinearLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginStart="30dp"
-                                                    android:gravity="center_vertical"
-                                                    android:orientation="horizontal">
-
-                                                    <ImageView
-                                                        android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:src="@drawable/imdb" />
-
-                                                    <TextView
-                                                        android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:textColor="@android:color/white"
-                                                        android:text="7.0/10"
-                                                        android:textStyle="bold" />
-                                                </LinearLayout>
-
-                                                <LinearLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginStart="40dp"
-                                                    android:gravity="center_vertical"
-                                                    android:orientation="horizontal">
-
-                                                    <ImageView
-                                                        android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:src="@drawable/data" />
-
-                                                    <TextView
-                                                        android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:textColor="@android:color/white"
-                                                        android:text="2012"
-                                                        android:textStyle="bold" />
-                                                </LinearLayout>
 
                                             </LinearLayout>-->
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@android:color/black"
-                        android:elevation="5dp" />
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_button"
+                                android:drawableLeft="@drawable/clock"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="10:30" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/custom_button"
+                                android:drawableLeft="@drawable/clock"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="13:00" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/custom_button"
+                                android:drawableLeft="@drawable/clock"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="17:30" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/custom_button"
+                                android:drawableLeft="@drawable/clock"
+                                android:gravity="center"
+                                android:padding="8dp"
+                                android:text="19:00" />
+
+                        </LinearLayout>
+
+                        <!--                    <TextView
+                                                android:id="@+id/mvoie_species"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@android:color/white"
+                                                android:layout_gravity="center"
+                                                android:layout_marginTop="1dp"
+                                                android:text="Kısa Acıklama"
+                                                android:textSize="20sp" />-->
+
+                        <!--                        <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="20dp"
+                                                    android:gravity="center_vertical"
+                                                    android:orientation="horizontal">
+
+                                                    <ImageView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:src="@drawable/clock" />
+
+                                                    <TextView
+                                                        android:id="@+id/movie_actor"
+                                                        android:layout_width="wrap_content"
+                                                        android:textColor="@android:color/white"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="8dp"
+                                                        android:text="02:18:17"
+                                                        android:textSize="16sp"
+                                                        android:textStyle="bold" />
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="30dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/imdb" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:textColor="@android:color/white"
+                                                            android:text="7.0/10"
+                                                            android:textStyle="bold" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="40dp"
+                                                        android:gravity="center_vertical"
+                                                        android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/data" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:textColor="@android:color/white"
+                                                            android:text="2012"
+                                                            android:textStyle="bold" />
+                                                    </LinearLayout>
+
+                                                </LinearLayout>-->
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/black"
+                            android:elevation="5dp" />
 
-                        <TextView
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="@string/lorem"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="@string/lorem"
-                            android:textColor="@android:color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="250dp"
+                                android:background="@drawable/custom_button"
+                                android:orientation="horizontal"
+                                android:padding="4dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="8.8"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="IMDB \nPuani"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@android:color/black"
+                            android:elevation="5dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycle_actor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@android:color/black"
+                            android:elevation="5dp" />
+
 
                     </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@android:color/black"
-                        android:elevation="5dp" />
-
-                    <!-- Yorum satiri --><!--<LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/custom_button"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/comment" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Yorumlar (3)"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>-->
-
-
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
