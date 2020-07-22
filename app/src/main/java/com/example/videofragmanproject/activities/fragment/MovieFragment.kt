@@ -45,7 +45,6 @@ class MovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        favbtn()
         txtAnim()
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             binding.playerView.player.stop()
@@ -76,18 +75,6 @@ class MovieFragment : Fragment() {
                 binding.txtMovieName.animate().alpha(0f).setDuration(15000)
                     .setInterpolator(AccelerateInterpolator()).start()
             }).start()
-    }
-
-    fun favbtn() {
-        binding.likebtn.setOnClickListener {
-            binding.likedbtn.visibility = View.VISIBLE
-
-            binding.likebtn.visibility = View.GONE
-        }
-        binding.likedbtn.setOnClickListener {
-            binding.likebtn.visibility = View.VISIBLE
-            binding.likedbtn.visibility = View.GONE
-        }
     }
 
     fun videoOynat(url: String) {

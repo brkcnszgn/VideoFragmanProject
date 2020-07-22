@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.bottom_sheet
 import kotlinx.android.synthetic.main.bottom_sheet.*
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
@@ -27,8 +28,18 @@ class MainActivity : AppCompatActivity() {
         binding.tabLayout.setupWithViewPager(viewPagerMovie)
         binding.tabLayout.setSelectedTabIndicatorColor(resources.getColor(R.color.white))
         setBottomSheet()
+
     }
 
+/*    fun addListenerOnRatingBar() {
+        //Rating değiştiği anda bunu TextView'da görüntüle
+        ratingBar.onRatingBarChangeListener =
+            OnRatingBarChangeListener { ratingBar, rating, fromUser ->
+                binding.includeLayout.sonucCiktiTV.setText(
+                    rating.toString()
+                )
+            }
+    }*/
 
     fun clickFunction() {
         binding.includeLayout.clickableBottomShet
@@ -75,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    open fun clickFragmentDetail(fragmentModel: FragmanModel) {
+    fun clickFragmentDetail(fragmentModel: FragmanModel) {
         when (bottomSheetBehavior.state) {
             BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.setState(
                 BottomSheetBehavior.STATE_EXPANDED

@@ -74,95 +74,165 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
                     android:background="@color/ColorGray"
-                    android:layout_margin="8dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/movie_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textColor="@android:color/white"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:text="Film Adi"
+                        android:text="Toy Story 4"
+                        android:textColor="@android:color/white"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
 
-                    <TextView
-                        android:id="@+id/mvoie_species"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="1dp"
-                        android:text="Kısa Acıklama"
-                        android:textSize="20sp" />
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="240dp"
+                            android:layout_height="40dp"
+                            android:background="@color/white"
+                            android:numStars="5" />
+
+                        <Button
+                            android:id="@+id/gonderButton"
                             android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/custom_button"
+                            android:text="Gonder" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:background="@drawable/custom_button"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="10:30" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/clock" />
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/custom_button"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="13:00" />
 
-                            <TextView
-                                android:id="@+id/movie_actor"
-                                android:layout_width="wrap_content"
-                                android:textColor="@android:color/white"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="02:18:17"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/custom_button"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="17:30" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/custom_button"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="19:00" />
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/imdb" />
+                    </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@android:color/white"
-                                    android:text="7.0/10"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="40dp"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+                    <!--                    <TextView
+                                            android:id="@+id/mvoie_species"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@android:color/white"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="1dp"
+                                            android:text="Kısa Acıklama"
+                                            android:textSize="20sp" />-->
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/data" />
+                    <!--                        <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="20dp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@android:color/white"
-                                    android:text="2012"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
+                                                <ImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:src="@drawable/clock" />
 
-                        </LinearLayout>
+                                                <TextView
+                                                    android:id="@+id/movie_actor"
+                                                    android:layout_width="wrap_content"
+                                                    android:textColor="@android:color/white"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="8dp"
+                                                    android:text="02:18:17"
+                                                    android:textSize="16sp"
+                                                    android:textStyle="bold" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="30dp"
+                                                    android:gravity="center_vertical"
+                                                    android:orientation="horizontal">
+
+                                                    <ImageView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:src="@drawable/imdb" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:textColor="@android:color/white"
+                                                        android:text="7.0/10"
+                                                        android:textStyle="bold" />
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="40dp"
+                                                    android:gravity="center_vertical"
+                                                    android:orientation="horizontal">
+
+                                                    <ImageView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:src="@drawable/data" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:textColor="@android:color/white"
+                                                        android:text="2012"
+                                                        android:textStyle="bold" />
+                                                </LinearLayout>
+
+                                            </LinearLayout>-->
 
 
                     <View
@@ -171,55 +241,31 @@
                         android:background="@android:color/black"
                         android:elevation="5dp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
-                            android:text="Oyuncular:"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/oyuncuismi"
-                            android:textColor="@android:color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textColor="@android:color/white"
-                            android:layout_height="wrap_content"
-                            android:text="Aciklama:"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
+                            android:padding="8dp"
                             android:text="@string/lorem"
+                            android:textColor="@android:color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        android:elevation="5dp" />
+
+                    <!-- Yorum satiri --><!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@drawable/custom_button"
@@ -239,7 +285,9 @@
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                    </LinearLayout>
+                    </LinearLayout>-->
+
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
