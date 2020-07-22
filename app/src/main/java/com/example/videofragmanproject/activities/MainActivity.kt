@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.videofragmanproject.R
+import com.example.videofragmanproject.activities.fragment.MovieFragment
 import com.example.videofragmanproject.adapter.ActorAdapter
 import com.example.videofragmanproject.adapter.MovieAdapter
 import com.example.videofragmanproject.databinding.ActivityMainBinding
@@ -95,12 +96,13 @@ class MainActivity : AppCompatActivity() {
             )
             BottomSheetBehavior.STATE_EXPANDED -> {
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                (binding.root.context as MovieFragment).stoppedVideo()
             }
         }
 
         if (bottomSheetBehavior.state == 3)
             binding.includeLayout.movieName.text = fragmentModel.title
-        detail_video
+
     }
 
 
