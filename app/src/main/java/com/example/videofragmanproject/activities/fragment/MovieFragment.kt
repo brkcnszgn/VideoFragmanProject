@@ -44,9 +44,14 @@ class MovieFragment : Fragment() {
 
     }
 
+    open fun stoppedVideo() {
+        binding.playerView.player.stop()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         txtAnim()
+        // videoOynat(URL)
         binding.recycleFrg.adapter = FragmanAdapter(MockData.getFragmanList()) { fragmentModel ->
             binding.playerView.player.stop()
             (binding.root.context as MainActivity).clickFragmentDetail(fragmentModel) // Fragment'ten activity'e ulaşıp gerekli fonksiyionu çalıştırmak için instanceof alınır.
@@ -68,6 +73,7 @@ class MovieFragment : Fragment() {
         simpleExoPlayer = ExoPlayerFactory.newSimpleInstance(view.context)
 
     }
+
 
     fun txtAnim() {
         binding.txtMovieName.animate().alpha(1f).setDuration(500)
