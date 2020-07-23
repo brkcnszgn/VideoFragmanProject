@@ -1,16 +1,17 @@
-package com.example.videofragmanproject.mock
+package com.example.videofragmanproject.data.mock
 
 import androidx.fragment.app.Fragment
-import com.example.videofragmanproject.activities.fragment.MovieFragment
-import com.example.videofragmanproject.model.ActorModel
-import com.example.videofragmanproject.model.FragmanModel
+import com.example.videofragmanproject.data.model.ActorModel
+import com.example.videofragmanproject.data.model.FragmanModel
+import com.example.videofragmanproject.ui.MovieFragment
 
 
 object MockData {
     fun getMoviesFragment(fragmentSize: Int): List<Fragment> {
         val fragmentList = ArrayList<Fragment>()
         repeat(fragmentSize) {
-            val fragmentmovie = MovieFragment()
+            val fragmentmovie =
+                MovieFragment()
             fragmentList.add(fragmentmovie)
         }
         return fragmentList

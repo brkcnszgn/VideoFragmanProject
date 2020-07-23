@@ -30,6 +30,7 @@
                 android:id="@+id/actorPhoto"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:contentDescription="@string/actor"
                 android:scaleType="centerCrop"
                 android:src="@drawable/actor1" />
         </LinearLayout>
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:maxLines="2"
-            android:text="Annie Marie"
+            android:text="@string/queen"
             android:textColor="@color/white"
             android:textSize="18sp" />
 

@@ -1,4 +1,4 @@
-package com.example.videofragmanproject.model
+package com.example.videofragmanproject.data.model
 
 
 data class FragmanModel(

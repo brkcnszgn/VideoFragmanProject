@@ -1,13 +1,12 @@
-package com.example.videofragmanproject.adapter
+package com.example.videofragmanproject.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videofragmanproject.holder.FragmanHolder
-import com.example.videofragmanproject.model.FragmanModel
+import com.example.videofragmanproject.data.model.FragmanModel
 
 
 class FragmanAdapter(
-    val fragmanlist: List<FragmanModel>,
+    private val fragmanlist: List<FragmanModel>,
     private val onItemClickListener: (FragmanModel) -> Unit
 ) : RecyclerView.Adapter<FragmanHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FragmanHolder {

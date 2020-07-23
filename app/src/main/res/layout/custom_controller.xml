@@ -18,10 +18,5 @@
         android:layout_alignParentBottom="true"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:padding="8dp">
-
-
-    </LinearLayout>
-
-
+        android:padding="8dp" />
 </RelativeLayout>

@@ -1,12 +1,11 @@
-package com.example.videofragmanproject.adapter
+package com.example.videofragmanproject.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videofragmanproject.holder.ActorHolder
-import com.example.videofragmanproject.model.ActorModel
+import com.example.videofragmanproject.data.model.ActorModel
 
 
-class ActorAdapter(val actorList: List<ActorModel>) : RecyclerView.Adapter<ActorHolder>() {
+class ActorAdapter(private val actorList: List<ActorModel>) : RecyclerView.Adapter<ActorHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorHolder {
         return ActorHolder(parent)
     }

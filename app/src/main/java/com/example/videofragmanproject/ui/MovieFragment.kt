@@ -1,4 +1,4 @@
-package com.example.videofragmanproject.activities.fragment
+package com.example.videofragmanproject.ui
 
 import android.content.Context
 import android.net.Uri
@@ -11,17 +11,16 @@ import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import androidx.fragment.app.Fragment
-import com.example.videofragmanproject.activities.MainActivity
-import com.example.videofragmanproject.adapter.FragmanAdapter
+import com.example.videofragmanproject.Constant
+import com.example.videofragmanproject.data.mock.MockData
 import com.example.videofragmanproject.databinding.FragmentMovieBinding
-import com.example.videofragmanproject.mock.MockData
+import com.example.videofragmanproject.ui.adapter.FragmanAdapter
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class MovieFragment : Fragment() {
@@ -29,22 +28,18 @@ class MovieFragment : Fragment() {
     private lateinit var binding: FragmentMovieBinding
     private lateinit var simpleExoPlayer: SimpleExoPlayer
     private lateinit var mediaDataSourceFactory: DataSource.Factory
-    lateinit var buttonSheetBehavior: BottomSheetBehavior<*>
-
-    val URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-
+//    lateinit var buttonSheetBehavior: BottomSheetBehavior<*>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMovieBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
 
     }
 
-    open fun stoppedVideo() {
+    fun stoppedVideo() {
         binding.playerView.player.stop()
     }
 
@@ -75,13 +70,13 @@ class MovieFragment : Fragment() {
     }
 
 
-    fun txtAnim() {
+    private fun txtAnim() {
         binding.txtMovieName.animate().alpha(1f).setDuration(500)
             .setInterpolator(DecelerateInterpolator())
-            .withEndAction(Runnable {
+            .withEndAction {
                 binding.txtMovieName.animate().alpha(0f).setDuration(15000)
                     .setInterpolator(AccelerateInterpolator()).start()
-            }).start()
+            }.start()
     }
 
     fun videoOynat(url: String) {
@@ -129,7 +124,7 @@ class MovieFragment : Fragment() {
         super.onResume()
         Log.e("TAG", "onResume tetiklendi")
         txtAnim()
-        videoOynat(URL)
+        videoOynat(Constant.BigBuckBunny_URL)
 
     }
 

@@ -19,6 +19,7 @@
             android:id="@+id/img_fragman"
             android:layout_height="60dp"
             android:layout_width="150dp"
+            android:contentDescription="@string/film"
             android:scaleType="centerCrop"
             android:src="@drawable/film1" />
 
@@ -31,7 +32,7 @@
             android:maxEms="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seni Gidi Seni" />
+            android:text="@string/you_little_pickle" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

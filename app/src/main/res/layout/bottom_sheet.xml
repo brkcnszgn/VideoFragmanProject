@@ -38,15 +38,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Get Detail"
+                    android:text="@string/get_detail"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageBottomSheet"
                     android:layout_width="30dp"
+                    android:contentDescription="@string/bottom_sheet"
                     android:layout_height="30dp"
-                    android:layout_centerInParent="true"
                     android:layout_marginStart="10dp"
                     android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
 
@@ -94,7 +94,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
-                                android:text="Toy Story 4"
+                                android:text="@string/toy_story4"
                                 android:textColor="@android:color/white"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
@@ -106,7 +106,7 @@
                                 android:layout_marginTop="4dp"
                                 android:background="@drawable/custom_button"
                                 android:padding="8dp"
-                                android:text="Romantik,Komedi" />
+                                android:text="@string/romantic_comedy" />
 
                         </LinearLayout>
 
@@ -150,7 +150,7 @@
                                 android:drawableLeft="@drawable/clock"
                                 android:gravity="center"
                                 android:padding="8dp"
-                                android:text="10:30" />
+                                android:text="@string/ten_thirty_clock" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -160,7 +160,7 @@
                                 android:drawableLeft="@drawable/clock"
                                 android:gravity="center"
                                 android:padding="8dp"
-                                android:text="13:00" />
+                                android:text="@string/one_clock" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -170,7 +170,7 @@
                                 android:drawableLeft="@drawable/clock"
                                 android:gravity="center"
                                 android:padding="8dp"
-                                android:text="17:30" />
+                                android:text="@string/half_past_seven_clock" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -180,7 +180,7 @@
                                 android:drawableLeft="@drawable/clock"
                                 android:gravity="center"
                                 android:padding="8dp"
-                                android:text="19:00" />
+                                android:text="@string/nine_clock" />
 
                         </LinearLayout>
 
@@ -299,7 +299,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="8.8"
+                                    android:text="@string/eight_point_eight"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -308,7 +308,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="IMDB \nPuani"
+                                android:text="@string/point_of_imdb"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
