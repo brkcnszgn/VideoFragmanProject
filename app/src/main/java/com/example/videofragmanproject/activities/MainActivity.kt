@@ -34,15 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-/*    fun addListenerOnRatingBar() {
-        //Rating değiştiği anda bunu TextView'da görüntüle
-        ratingBar.onRatingBarChangeListener =
-            OnRatingBarChangeListener { ratingBar, rating, fromUser ->
-                binding.includeLayout.sonucCiktiTV.setText(
-                    rating.toString()
-                )
-            }
-    }*/
 
     fun clickFunction() {
         binding.includeLayout.clickableBottomShet
@@ -53,9 +44,14 @@ class MainActivity : AppCompatActivity() {
 
                         binding.includeLayout.detailVideo.startLayoutAnimation()
                     }
-                    BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.setState(
-                        BottomSheetBehavior.STATE_COLLAPSED
-                    )
+                    BottomSheetBehavior.STATE_EXPANDED -> {
+                        bottomSheetBehavior.setState(
+                            BottomSheetBehavior.STATE_COLLAPSED
+                        )
+                        //(binding.root.context as MovieFragment).videoOynat("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+
+                    }
+
                 }
             }
 
@@ -97,6 +93,8 @@ class MainActivity : AppCompatActivity() {
             BottomSheetBehavior.STATE_EXPANDED -> {
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
                 (binding.root.context as MovieFragment).stoppedVideo()
+                (binding.root.context as MovieFragment).videoOynat("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+
             }
         }
 
