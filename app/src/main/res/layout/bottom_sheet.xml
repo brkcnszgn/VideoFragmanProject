@@ -15,6 +15,7 @@
         app:cardElevation="10dp">
 
         <LinearLayout
+            android:background="@color/ColorGray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -56,11 +57,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+
                 android:background="@color/black"
                 android:orientation="vertical"
                 android:visibility="visible">
-
 
                 <com.google.android.exoplayer2.ui.PlayerView
                     android:id="@+id/detail_video"

@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorOrange"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".ui.SplashScreenActivity">
+
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        app:neomorph_background_color="@color/light_white"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_elevation="8dp"
+        app:neomorph_highlight_color="@color/light_white"
+        app:neomorph_shadow_color="@color/dark"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_view_type="rectangular">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rocketloading" />
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    <TextView
+        android:id="@+id/tv_frg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_loading"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/aclonica"
+        android:text="FRAGMAN"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <!--   <TextView
 
@@ -28,12 +63,12 @@
             android:background="@drawable/video"
         />-->
 
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:scaleType="centerInside"
-        android:src="@drawable/splash" />
+    <!--    <pl.droidsonroids.gif.GifImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/splash" />-->
 
 
-</LinearLayout>
+</RelativeLayout>
