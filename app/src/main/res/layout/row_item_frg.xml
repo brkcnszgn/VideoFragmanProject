@@ -1,38 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/crdfrg"
-    android:layout_margin="4dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="6dp">
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="8dp"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <ImageView
+        <LinearLayout
 
-            android:id="@+id/img_fragman"
-            android:layout_height="60dp"
-            android:layout_width="150dp"
-            android:contentDescription="@string/film"
-            android:scaleType="centerCrop"
-            android:src="@drawable/film1" />
-
-        <TextView
-            android:layout_marginTop="4dp"
-            android:id="@+id/tv_title"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
-            android:maxEms="4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/you_little_pickle" />
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+
+                    android:id="@+id/img_fragman"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/film"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/film1" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/ColorGray"
+                    android:gravity="start"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Bumble Bee"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_button"
+                        android:padding="2dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="8.7"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_button"
+                        android:padding="2dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Aksiyon,Komedi"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+
+                        android:text="24 Temmuz Cuma"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

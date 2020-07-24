@@ -45,35 +45,17 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="50dp"
-            android:orientation="horizontal">
 
-            <!--            <Button
-                            android:id="@+id/likebtn"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/emptyheart1" />
-
-                        <Button
-                            android:id="@+id/likedbtn"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/emptyheart2"
-                            android:visibility="gone" />-->
-
-        </FrameLayout>
 
         <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:id="@+id/recycle_frg"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 android:layoutAnimation="@anim/item_layout_animation"
                 android:orientation="horizontal"
