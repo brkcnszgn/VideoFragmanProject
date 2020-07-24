@@ -48,8 +48,17 @@ class MovieFragment : Fragment() {
 
         override fun onStateChanged(bottomSheet: View, newState: Int) {
             when (newState) {
-                BottomSheetBehavior.STATE_COLLAPSED -> imageBottomSheet.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
-                BottomSheetBehavior.STATE_EXPANDED -> imageBottomSheet.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+                BottomSheetBehavior.STATE_COLLAPSED -> {
+                    imageBottomSheet.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+                    simpleExoPlayerDetail.playWhenReady = false
+                    simpleExoPlayerMain.playWhenReady = true
+                }
+                BottomSheetBehavior.STATE_EXPANDED -> {
+                    imageBottomSheet.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+                    videoOynat(Constant.TearsOfSteel, binding.bottomSheet.detail_video)
+                    simpleExoPlayerMain.playWhenReady = false
+
+                }
                 BottomSheetBehavior.STATE_DRAGGING -> imageBottomSheet.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
                 BottomSheetBehavior.STATE_HALF_EXPANDED -> {
                 }
@@ -70,6 +79,7 @@ class MovieFragment : Fragment() {
         binding.includeLayout.recycleActor.adapter = ActorAdapter(MockData.getActorList())
         setBottomSheet()
         simpleExoPlayerMain = ExoPlayerFactory.newSimpleInstance(requireActivity())
+        simpleExoPlayerDetail = ExoPlayerFactory.newSimpleInstance(requireActivity())
         return binding.root
 
     }
@@ -110,13 +120,11 @@ class MovieFragment : Fragment() {
         val mediaSource =
             ProgressiveMediaSource.Factory(mediaDataSourceFactory).createMediaSource(Uri.parse(url))
         if (v == binding.playerView) {
-            simpleExoPlayerMain = ExoPlayerFactory.newSimpleInstance(requireActivity())
             simpleExoPlayerMain.prepare(mediaSource, false, false)
             simpleExoPlayerMain.playWhenReady = true
             v.player = simpleExoPlayerMain
             v.useController = false
         } else {
-            simpleExoPlayerDetail = ExoPlayerFactory.newSimpleInstance(requireActivity())
             simpleExoPlayerDetail.prepare(mediaSource, false, false)
             simpleExoPlayerDetail.playWhenReady = true
             v.player = simpleExoPlayerDetail
