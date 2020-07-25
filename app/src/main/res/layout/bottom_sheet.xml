@@ -15,9 +15,9 @@
         app:cardElevation="10dp">
 
         <LinearLayout
-            android:background="@color/ColorGray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/ColorGray"
             android:orientation="vertical">
 
             <LinearLayout
@@ -46,36 +46,41 @@
                 <ImageView
                     android:id="@+id/imageBottomSheet"
                     android:layout_width="30dp"
-                    android:contentDescription="@string/bottom_sheet"
                     android:layout_height="30dp"
                     android:layout_marginStart="10dp"
+                    android:contentDescription="@string/bottom_sheet"
                     android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
 
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content">
 
-                android:background="@color/black"
-                android:orientation="vertical"
-                android:visibility="visible">
 
-                <com.google.android.exoplayer2.ui.PlayerView
-                    android:id="@+id/detail_video"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    app:auto_show="true"
-                    app:hide_on_touch="true"
-                    app:repeat_toggle_modes="one"
-                    app:resize_mode="fill"
-                    app:show_shuffle_button="false" />
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <!--                <androidx.cardview.widget.CardView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    app:cardCornerRadius="16dp">-->
+
+                    <com.google.android.exoplayer2.ui.PlayerView
+                        android:id="@+id/detail_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:auto_show="true"
+                        app:hide_on_touch="true"
+                        app:repeat_toggle_modes="one"
+                        app:resize_mode="fill"
+                        app:show_shuffle_button="false" />
+
+                    <!--                <androidx.cardview.widget.CardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:cardCornerRadius="16dp">-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -86,6 +91,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
                             <TextView
@@ -98,15 +104,6 @@
                                 android:textColor="@android:color/white"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="60dp"
-                                android:layout_marginTop="4dp"
-                                android:background="@drawable/custom_button"
-                                android:padding="8dp"
-                                android:text="@string/romantic_comedy" />
 
                         </LinearLayout>
 
@@ -337,8 +334,48 @@
 
 
                     </LinearLayout>
-                <!--</androidx.cardview.widget.CardView>-->
-            </LinearLayout>
+                    <!--</androidx.cardview.widget.CardView>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="100dp">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="18dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/film1" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="150dp"
+                        android:layout_marginTop="60dp">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/floatingActionButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            app:backgroundTint="#966400"
+                            app:srcCompat="@drawable/exo_controls_play" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
         </LinearLayout>
+
+
     </androidx.cardview.widget.CardView>
 </LinearLayout>
